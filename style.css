@@ -1,0 +1,24 @@
+*{
+	font-family:sans-serif;
+	font-size:20px;
+}
+.datapoint:hover{
+	fill:grey;
+}
+#dataentry{
+	position:relative;
+	left:400px;
+	
+}
+button {
+	border-radius:5%;
+	background-color:#01c605;
+	border:5px solid #01c605;
+	color:black;
+	height:160px;
+	width:259px;
+	font-size:80px;
+}
+button:hover {
+	background-color:#006802;
+}

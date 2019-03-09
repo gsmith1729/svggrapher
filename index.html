@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <svg id="chart" width="600" height="600">
+    <!--<polygon points="0,0 400,0 400,400 0,400" fill="white" stroke="black"/>-->
+    <!--<circle id="earth" cx="200" cy="100" r="3" stroke="green" stroke-width="1" fill="blue"/>-->
+    <circle cx=20 cy=20 r=4 stroke="red" stroke-width="1.5"/>
+  </svg>
+  <br>
+  <button onclick="plot('chart',xarray(),yarrays(),document.getElementById('xaxistitle').value,document.getElementById('yaxistitle').value,parseInt(document.getElementById('chartheight').value),parseInt(document.getElementById('chartwidth').value),document.getElementsByName('linebpoints')[0].checked,getcolours(),gettype(),document.getElementsByName('shade')[0].checked,parseInt(document.getElementById('xlabels').value),parseInt(document.getElementById('ylabels').value),parseInt(document.getElementById('xlines').value),parseInt(document.getElementById('ylines').value),gettitles(),document.getElementsByName('xaxisstart')[0].checked,document.getElementsByName('yaxisstart')[0].checked,parseInt(document.getElementById('xstart').value),parseInt(document.getElementById('xend').value),parseInt(document.getElementById('ystart').value),parseInt(document.getElementById('yend').value)); movetable()">PLOT</button>
+  <br>
+  <table style="border: 1px solid black;">
+    <tr>
+      <td>Datasets:</td><td> <input id="ysets" type="number" onchange="datarow()"></td>
+    </tr>
+    <tr>
+      <td>Chart Height:</td><td> <input id="chartheight" type="number" value="1000"></td>
+    </tr>
+    <tr>
+      <td>Chart Width:</td><td> <input id="chartwidth" type="number" value="1000"></td>
+    </tr>
+    <tr>
+      <td>x axis title:</td><td> <input id="xaxistitle" type="text"></td>
+    </tr>
+    <tr>
+      <td>y axis title:</td><td> <input id="yaxistitle" type="text"></td>
+    </tr>
+    <tr>
+      <td>Joined Points:</td>
+      <td>
+        <form action="">
+          <input type="radio" name="linebpoints"> Yes
+          <input type="radio" name="linebpoints"> No
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>Shade:</td>
+      <td>
+        <form action="">
+          <input type="radio" name="shade"> Yes
+          <input type="radio" name="shade"> No
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>Marker Type:</td>
+      <td>
+        <form action="">
+          <input type="radio" name="markershape"> x
+          <input type="radio" name="markershape"> o
+        </form>
+      </td>
+    </tr>
+    <tr><td>Number of x axis labels (excluding intial):</td><td> <input id="xlabels" type="number" value="5"></td></tr>
+    <tr><td>Number of y axis labels (excluding intial):</td><td> <input id="ylabels" type="number" value="5"></td></tr>
+    <tr><td>Number of vertical lines per label:        </td><td> <input id="xlines" type="number" value="2"></td></tr>
+    <tr><td>Number of horizontal lines per label:      </td><td> <input id="ylines" type="number" value="2"></td></tr>
+    <tr>
+      <td>Choose x axis start and end:</td>
+      <td>
+        <form action="">
+          <input type="radio" name="xaxisstart"> Yes
+          <input type="radio" name="xaxisstart" checked> No
+        </form>
+      </td>
+    </tr>
+    <tr><td>x axis start:</td><td> <input id="xstart" type="number"></td></tr>
+    <tr><td>x axis end:</td><td> <input id="xend" type="number"></td></tr>
+        <tr>
+      <td>Choose y axis start and end:</td>
+      <td>
+        <form action="">
+          <input type="radio" name="yaxisstart"> Yes
+          <input type="radio" name="yaxisstart" checked> No
+        </form>
+      </td>
+    </tr>
+    <tr><td>y axis start:</td><td> <input id="ystart" type="number"></td></tr>
+    <tr><td>y axis end:</td><td> <input id="yend" type="number"></td></tr>
+  </table>
+  <table>
+  <table id="dataentry" style="position:relative;left:1400px;bottom:1400px">
+    <tr id="dataheader">
+      <td></td>
+      <td>x</td>
+
+    </tr>
+    <tr id="colours">
+      <td>colours</td>
+      <td></td>
+    </tr>
+    <tr id="datatable">
+      <td>
+        Data
+      </td>
+      <td>
+        <textarea name="x" style="width: 40px" rows="100"></textarea>
+      </td>
+    </tr>
+  </table>
+  <script src="function.js"></script>
+</body>
+</html>
